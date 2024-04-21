@@ -18,7 +18,7 @@ function shuffle(array) {
     }
     return array;
 }
-var symbols = ['A', 'B', 'C', 'D', 'E', 'G', 'F'];
+var symbols = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
 var answer, currentSymbols, restOfSymbols;
 function initCode() {
     restOfSymbols = shuffle(__spreadArray([], symbols, true));

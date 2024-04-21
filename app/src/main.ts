@@ -9,7 +9,7 @@ function shuffle<T>(array: Array<T>): Array<T> {
     return array;
 }
 
-const symbols = ['A', 'B', 'C', 'D', 'E', 'G', 'F'];
+const symbols = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
 
 let answer, currentSymbols, restOfSymbols;
 
