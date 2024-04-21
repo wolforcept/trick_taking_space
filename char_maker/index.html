@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/external-svg-loader@latest/svg-loader.min.js" async></script>
+    <style>
+        body {
+            background-color: rgb(31, 31, 32);
+            margin: 0;
+        }
+
+        a {
+            border-radius: 10px;
+            background-color: rgb(182, 202, 224);
+
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: bolder;
+            cursor: pointer;
+            user-select: none;
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #buttons {
+            position: fixed;
+            left: 810px;
+            top: 0;
+            display: grid;
+            grid-template-columns: 40px 120px 40px 40px;
+            /*grid-template-rows: 50px 50px 50px 50px 50px 50px 50px;*/
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: 400px;
+        }
+
+        #background,
+        .obj {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 800px;
+            height: 800px;
+        }
+
+
+        input[type="checkbox"] {
+            width: 20px;
+            accent-color: rgb(47, 53, 59);
+        }
+    </style>
+</head>
+
+<body>
+    <img id="background">
+    <div id="bodyA" class="obj"></div>
+    <div id="bodyB" class="obj"></div>
+    <div id="bodyC" class="obj"></div>
+    <div id="headA" class="obj"></div>
+    <div id="headB" class="obj"></div>
+    <div id="faceA" class="obj"></div>
+    <div id="faceB" class="obj"></div>
+    <div id="hairA" class="obj"></div>
+    <div id="hairB" class="obj"></div>
+
+    <script src="charmaker.js" async defer></script>
+
+    <div id="buttons">
+        <a onclick="changeBack(-1)">←</a>
+        <a onclick="changeBack()" id="back">Back 0</a>
+        <a onclick="changeBack(1)">→</a>
+        <input type="checkbox" onchange="changeLocked(0,this)">
+
+        <a onclick="changeHead(-1)">←</a>
+        <a onclick="changeHead()" id="head">Head 0</a>
+        <a onclick="changeHead(1)">→</a>
+        <input type="checkbox" onchange="changeLocked(1,this)">
+
+        <a onclick="changeHair(-1)">←</a>
+        <a onclick="changeHair()" id="hair">Hair 0</a>
+        <a onclick="changeHair(1)">→</a>
+        <input type="checkbox" onchange="changeLocked(2,this)">
+
+        <a onclick="changeHairColor(-1)">←</a>
+        <a onclick="changeHairColor()" id="hairColor">Hair Color 0</a>
+        <a onclick="changeHairColor(1)">→</a>
+        <input type="checkbox" onchange="changeLocked(3,this)">
+
+        <a onclick="changeFace(-1)">←</a>
+        <a onclick="changeFace()" id="face">Face 0</a>
+        <a onclick="changeFace(1)">→</a>
+        <input type="checkbox" onchange="changeLocked(4,this)">
+
+        <a onclick="changeBody(-1)">←</a>
+        <a onclick="changeBody()" id="body">Body 0</a>
+        <a onclick="changeBody(1)">→</a>
+        <input type="checkbox" onchange="changeLocked(5,this)">
+
+        <a onclick="changeColor(-1)">←</a>
+        <a onclick="changeColor()" id="color">Color 0</a>
+        <a onclick="changeColor(1)">→</a>
+        <input type="checkbox" onchange="changeLocked(6,this)">
+
+        <a onclick="exportt()" style="grid-column: 1 / 5">Export</a>
+        <a onclick="randomize()" style="grid-column: 3 / 5">randomize</a>
+    </div>
+    <div id="outer"></div>
+</body>
+
+</html>
