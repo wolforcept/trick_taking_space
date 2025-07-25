@@ -8,29 +8,40 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
     <script src="jquery.ui.touch-punch.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <title>Space Captain</title>
 </head>
 
 <body>
 
-    <div id="current">
-        <div id="current_0" class="drop current"></div>
-        <div id="current_1" class="drop current"></div>
-        <div id="current_2" class="drop current"></div>
-        <div id="current_3" class="drop current"></div>
+    <div id="menu">
+        <img src="./pwa/logo512.png" width="80%">
+        <div class="menuButton" onclick="startGame(1)">EASY</div>
+        <div class="menuButton" onclick="startGame(2)">MEDIUM</div>
+        <div class="menuButton" onclick="startGame(3)">HARD</div>
     </div>
 
-    <div id="arrow"><img src="assets/arrow.svg"></div>
+    <div id="game">
 
-    <div id="rest">
-        <div id="rest_0" class="drop rest"></div>
-        <div id="rest_1" class="drop rest"></div>
-        <div id="rest_2" class="drop rest"></div>
-        <!-- <div id="rest_3" class="drop rest"></div> -->
+        <div id="current">
+            <div id="current_0" class="drop current"></div>
+            <div id="current_1" class="drop current"></div>
+            <div id="current_2" class="drop current"></div>
+            <div id="current_3" class="drop current"></div>
+        </div>
+
+        <div id="arrow"><img src="assets/arrow.svg"></div>
+
+        <div id="rest">
+            <div id="rest_0" class="drop rest"></div>
+            <div id="rest_1" class="drop rest"></div>
+            <div id="rest_2" class="drop rest"></div>
+            <!-- <div id="rest_3" class="drop rest"></div> -->
+        </div>
+
+        <div id="check">CHECK CODE</div>
+
+        <div id="attempts"></div>
     </div>
-
-    <div id="check">CHECK CODE</div>
-
-    <div id="attempts"></div>
 
     <script src="script.js" async defer></script>
 </body>

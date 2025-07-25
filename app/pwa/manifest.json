@@ -1,0 +1,20 @@
+{
+  "name": "Space Captain",
+  "short_name": "Space Captain",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#222223",
+  "theme_color": "#222223",
+  "icons": [
+    {
+      "src": "logo192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "logo512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

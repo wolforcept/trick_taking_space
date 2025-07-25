@@ -105,17 +105,34 @@ function check() {
     $("#attempts").prepend(div);
     // console.log({ corrects, misses, fails });
 }
-$('.drop').droppable(droppableOptions);
-$("#arrow").on("click", toggleArrow);
-$("#check").on("click", check);
-toggleArrow();
-var corrects = 0, misses = 0, fails = 0;
-do {
-    initCode();
-    var outputOfCheck = checkCode(currentSymbols);
-    corrects = outputOfCheck.corrects;
-    misses = outputOfCheck.misses;
-    fails = outputOfCheck.fails;
-} while (corrects > 0 || misses != 2);
-createCardDivs();
-check();
+function startGame(difficulty) {
+    var nrOfCorrects = 1;
+    var nrOfMisses = 1;
+    if (difficulty == 2) {
+        nrOfCorrects = 0;
+        nrOfMisses = 2;
+    }
+    if (difficulty == 3) {
+        nrOfCorrects = 0;
+        nrOfMisses = 1;
+    }
+    $("#menu").fadeOut(500);
+    setTimeout(function () {
+        $("#game").fadeIn();
+    }, 500);
+    $('.drop').droppable(droppableOptions);
+    $("#arrow").on("click", toggleArrow);
+    $("#check").on("click", check);
+    toggleArrow();
+    var corrects = 0, misses = 0, fails = 0;
+    do {
+        initCode();
+        var outputOfCheck = checkCode(currentSymbols);
+        corrects = outputOfCheck.corrects;
+        misses = outputOfCheck.misses;
+        fails = outputOfCheck.fails;
+    } while (corrects != nrOfCorrects || misses != nrOfMisses);
+    createCardDivs();
+    check();
+}
+$("#game").hide();

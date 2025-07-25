@@ -109,18 +109,39 @@ function check() {
     // console.log({ corrects, misses, fails });
 }
 
-$('.drop').droppable(droppableOptions);
-$("#arrow").on("click", toggleArrow);
-$("#check").on("click", check);
-toggleArrow();
+function startGame(difficulty: number) {
 
-let corrects = 0, misses = 0, fails = 0;
-do {
-    initCode();
-    const outputOfCheck = checkCode(currentSymbols);
-    corrects = outputOfCheck.corrects;
-    misses = outputOfCheck.misses;
-    fails = outputOfCheck.fails;
-} while (corrects > 0 || misses != 2);
-createCardDivs();
-check();
+    let nrOfCorrects = 1;
+    let nrOfMisses = 1;
+    if (difficulty == 2) {
+        nrOfCorrects = 0;
+        nrOfMisses = 2;
+    }
+    if (difficulty == 3) {
+        nrOfCorrects = 0;
+        nrOfMisses = 1;
+    }
+
+    $("#menu").fadeOut(500);
+    setTimeout(() => {
+        $("#game").fadeIn();
+    }, 500);
+
+    $('.drop').droppable(droppableOptions);
+    $("#arrow").on("click", toggleArrow);
+    $("#check").on("click", check);
+    toggleArrow();
+
+    let corrects = 0, misses = 0, fails = 0;
+    do {
+        initCode();
+        const outputOfCheck = checkCode(currentSymbols);
+        corrects = outputOfCheck.corrects;
+        misses = outputOfCheck.misses;
+        fails = outputOfCheck.fails;
+    } while (corrects != nrOfCorrects || misses != nrOfMisses);
+    createCardDivs();
+    check();
+}
+
+$("#game").hide();

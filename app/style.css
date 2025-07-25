@@ -8,7 +8,8 @@
 html,
 body {
     margin: 0;
-    overflow: hidden;
+    height: 100%;
+    /* overflow: hidden; */
 }
 
 * {
@@ -17,10 +18,38 @@ body {
 
 body {
     background-color: #222223;
+}
+
+#menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#menu .menuButton {
+    color: white;
+    padding: 1vw 5vw;
+    margin-top: 5vw;
+    border-radius: 10vw;
+    height: 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    user-select: none;
+    cursor: pointer;
+}
+
+#game {
     display: flex;
     flex-direction: column;
     justify-content: baseline;
     align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 #current {
@@ -117,6 +146,10 @@ body {
 
 #check:hover {
     transform: scale(105%);
+}
+
+#attempts {
+    overflow: scroll;
 }
 
 .attempt {
