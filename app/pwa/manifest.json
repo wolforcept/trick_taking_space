@@ -1,6 +1,6 @@
 {
   "name": "Space Captain",
-  "short_name": "Space Captain",
+  "short_name": "spacecaptain",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#222223",
